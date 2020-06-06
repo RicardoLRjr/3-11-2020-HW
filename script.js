@@ -75,11 +75,15 @@ var submitScore = document.getElementById("score-submit");
 var NameValue = document.getElementById("exampleNameInput");
 // Refers to the saved name/score value
 var resultPage = document.getElementById("Results");
+// Refers to the result page
 var lastResult = document.getElementById("score1");
+// Last high score
 var lastName = localStorage.getItem("Name-Value")
+// last username to complete code quiz
 var lastScore = localStorage.getItem("Hi-Score")
+// score of last username to complete code quiz
 var newResult = document.getElementById("scoreNow")
-
+// Result of user score
 
 // Functions:
 
@@ -111,16 +115,16 @@ function timerSubtract() {
     seconds -= 10;
   }
 }
-
+// Function that controls the timer and tells it to count down.
 function timerStop() {
   var timerInterval = setInterval(function() {
     time.textContent = "Time: " + seconds;
   });
   localStorage.setItem("Hi-Score", seconds);
-  
+
   clearInterval(timerInterval);
 }
-
+// Function that stops the timer at 0 
 startBtn.addEventListener("click", function() {
   startPage.setAttribute("style", "display: none");
 
