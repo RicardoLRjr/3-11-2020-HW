@@ -133,37 +133,52 @@ startBtn.addEventListener("click", function() {
   setTime();
   question1();
 });
+// Start Button event listener
+
+
+
+// All question functions below are the same, just calling in different parameters.
+// They work by creating an div, giving it the text content from the question array
+// and then appending it to the question div above
+ // TODO: fix this by looping, not dumb, hard coding
 
 function question1() {
   var questionTitle = document.createElement("h2");
   questionTitle.textContent = questionsArr[0].question;
   questionDiv1.append(questionTitle);
+  // Question title element
   var questionBox1 = document.createElement("button");
   questionBox1.classList.add("btn-primary");
   questionBox1.textContent = questionsArr[0].answers[0];
   questionDiv1.append(questionBox1);
+  // Question box 1 code:
   var questionBox2 = document.createElement("button");
   questionBox2.classList.add("btn-primary");
   questionBox2.textContent = questionsArr[0].answers[1];
   questionDiv1.append(questionBox2);
+  // Question box 2 code
   var questionBox3 = document.createElement("button");
   questionBox3.classList.add("btn-primary");
   questionBox3.textContent = questionsArr[0].answers[2];
   questionDiv1.append(questionBox3);
+  // Question box 3 code
   var questionBox4 = document.createElement("button");
   questionBox4.classList.add("btn-primary");
   questionBox4.textContent = questionsArr[0].answers[3];
   questionDiv1.append(questionBox4);
-
+  // Question box 4 code
   questionBox1.addEventListener("click", function() {
     hiddenDiv.textContent = "Correct!";
     question2();
   });
+  // function to check if question is the right answer
   questionBox2.addEventListener("click", function() {
     hiddenDiv.textContent = "Wrong!";
     timerSubtract();
     question2();
   });
+  // function to check if question is the wrong answer
+  // (duplicated throughoout for wrong answer)
   questionBox3.addEventListener("click", function() {
     hiddenDiv.textContent = "Wrong!";
     timerSubtract();
